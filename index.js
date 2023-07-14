@@ -1,11 +1,11 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-
+//sets the canvas size
 canvas.width = innerWidth 
 canvas.height = innerWidth 
 
-
+//sets the limit
 class Boundary{
   constructor({position} ){
     this.position = position
