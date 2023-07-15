@@ -20,10 +20,23 @@ class Boundary {
   }
 }
 
+
 const boundaries = [
   new Boundary({
     position: {
       x: 0,
+      y: 0
+    }
+  }),
+  new Boundary({
+    position: {
+      x: 41,
+      y: 0
+    }
+  }),
+  new Boundary({
+    position: {
+      x: 41,
       y: 0
     }
   }),
