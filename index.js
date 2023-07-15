@@ -27,7 +27,15 @@ const boundaries = [
       y: 0
     }
   }),
+  new Boundary({
+    position: {
+      x: 41,
+      y: 0
+    }
+  })
 ]
+
+
 
 
 
