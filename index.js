@@ -35,6 +35,9 @@ const boundaries = [
   })
 ]
 
+boundaries.forEach(boundary => {
+  boundary.draw();
+});
 
 
 
