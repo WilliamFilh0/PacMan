@@ -21,32 +21,18 @@ class Boundary {
 }
 
 
-const boundaries = [
-  new Boundary({
-    position: {
-      x: 0,
-      y: 0
-    }
-  }),
-  new Boundary({
-    position: {
-      x: 41,
-      y: 0
-    }
-  }),
-  new Boundary({
-    position: {
-      x: 41,
-      y: 0
-    }
-  }),
-  new Boundary({
-    position: {
-      x: 41,
-      y: 0
+
+
+map.forEach((row, i )  => {
+  row.forEach((symbol, j) => {
+    console.log(symbol)
+    switch(symbol){
+      case '-':
+       
     }
   })
-]
+})
+
 
 boundaries.forEach(boundary => {
   boundary.draw();
@@ -57,4 +43,4 @@ boundaries.forEach(boundary => {
 
 
 
-//15:35
+//27:03
