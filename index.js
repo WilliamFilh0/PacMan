@@ -22,13 +22,20 @@ class Boundary {
 
 
 
-
 map.forEach((row, i )  => {
   row.forEach((symbol, j) => {
     console.log(symbol)
     switch(symbol){
       case '-':
-       
+        boundaries.push(
+          new Boundary({
+            position: {
+              x:40 * j,
+              y:40 * i
+            }
+          })
+        )
+        break
     }
   })
 })
