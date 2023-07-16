@@ -20,6 +20,9 @@ class Boundary {
   }
 }
 
+const map = [
+  
+]
 
 
 map.forEach((row, i )  => {
