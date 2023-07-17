@@ -7,6 +7,7 @@ canvas.height = innerWidth
 
 //sets the limit
 class Boundary {
+
   constructor({ position }) {
     this.position = position
     this.width = 40
@@ -21,8 +22,13 @@ class Boundary {
 }
 
 const map = [
-  
+  ['-', '-','-','-','-','-'],
+  ['-', ' ',' ',' ',' ','-'],
+  ['-', ' ',' ',' ',' ','-'],
+  ['-', ' ',' ',' ',' ','-'],
+  ['-', '-','-','-','-','-']
 ]
+const boundaries = []
 
 
 map.forEach((row, i )  => {
