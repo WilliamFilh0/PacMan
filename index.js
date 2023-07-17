@@ -22,26 +22,34 @@ class Boundary {
   }
 }
 
+class Player {
+  constructor() {
+    this.position = position
+    this.velocity = velocity
+    this.radius = 10
+  }
+}
+
 const map = [
-  ['-', '-','-','-','-','-'],
-  ['-', ' ',' ',' ',' ','-'],
-  ['-', ' ','-','-',' ','-'],
-  ['-', ' ',' ',' ',' ','-'],
-  ['-', '-','-','-','-','-']
+  ['-', '-', '-', '-', '-', '-'],
+  ['-', ' ', ' ', ' ', ' ', '-'],
+  ['-', ' ', '-', '-', ' ', '-'],
+  ['-', ' ', ' ', ' ', ' ', '-'],
+  ['-', '-', '-', '-', '-', '-']
 ]
 const boundaries = []
 
 
-map.forEach((row, i )  => {
+map.forEach((row, i) => {
   row.forEach((symbol, j) => {
     console.log(symbol)
-    switch(symbol){
+    switch (symbol) {
       case '-':
         boundaries.push(
           new Boundary({
             position: {
-              x:Boundary.width * j,
-              y:Boundary.height * i
+              x: Boundary.width * j,
+              y: Boundary.height * i
             }
           })
         )
