@@ -23,11 +23,12 @@ class Boundary {
 }
 
 class Player {
-  constructor() {
+  constructor({position, velocity}) {
     this.position = position
     this.velocity = velocity
-    this.radius = 10
+    this.radius = 15
   }
+  
 }
 
 const map = [
@@ -39,6 +40,13 @@ const map = [
 ]
 const boundaries = []
 
+const player = new Player({
+  position: {
+    x: Boundary.width+ Boundary.width/2,
+    y: Boundary.height + Boundary.height/2
+  },
+  
+})
 
 map.forEach((row, i) => {
   row.forEach((symbol, j) => {
@@ -63,9 +71,8 @@ boundaries.forEach(boundary => {
   boundary.draw();
 });
 
+player.draw()
 
 
 
-
-
-//27:03
+//34:28
