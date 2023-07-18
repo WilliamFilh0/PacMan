@@ -52,7 +52,10 @@ const player = new Player({
     x: Boundary.width+ Boundary.width/2,
     y: Boundary.height + Boundary.height/2
   },
- 
+  velocity:{
+    x:0,
+    y:0
+  }
 })
 
 map.forEach((row, i) => {
