@@ -116,6 +116,7 @@ function animate() {
   boundaries.forEach(boundary => {
     boundary.draw()
 
+    //função quando ele colide
     if (player.position.y - player.radius <= boundary.
       position.y + boundary.height && player.position.x +
       player.radius >= boundary.position.x && player.position
@@ -124,11 +125,12 @@ function animate() {
       boundary.width) {
       console.log('we are colliding')
     }
-
   })
+
+
   player.update()
-  player.velocity.x = 0
-  player.velocity.y = 0
+  /*  player.velocity.x = 0
+   player.velocity.y = 0 */
 
   if (keys.w.pressed && lastKey === 'w') {
     player.velocity.y = -5;
@@ -171,7 +173,25 @@ window.addEventListener('keydown', ({ key }) => {
   console.log(keys.s.pressed)
 })
 
+window.addEventListener('keyup', ({ key }) => {
+  switch (key) {
+    case 'w':
+      keys.w.pressed = false
+      break
+    case 'a':
+      keys.a.pressed = false
+      break
+    case 's':
+      keys.s.pressed = false
+      break
+    case 'd':
+      keys.d.pressed = false
+      break
+  }
 
+  console.log(keys.d.pressed)
+  console.log(keys.s.pressed)
+})
 
 
 //57;20
