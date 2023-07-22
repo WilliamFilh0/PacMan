@@ -129,7 +129,8 @@ function animate() {
       boundary.position.x + boundary.width
     ) {
       console.log('we are colliding')
-      
+      player.velocity.x = 0
+      player.velocity.y = 0
     }
 
   })
