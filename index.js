@@ -117,14 +117,21 @@ function animate() {
     boundary.draw()
 
     //função quando ele colide
-    if (player.position.y - player.radius <= boundary.
-      position.y + boundary.height && player.position.x +
-      player.radius >= boundary.position.x && player.position
-      .y + player.radius >= boundary.position.y && player.
-       position.x - player.radius <= boundary.position.x +
-      boundary.width) {
+    if (player.position.y - player.radius + player.velocity.y
+      <=
+      boundary.position.y + boundary.height &&
+      player.position.x + player.radius + player.velocity.x
+      >= boundary.position.x &&
+      player.position.y + player.radius + player.velocity.y 
+      >= boundary.position.y && 
+      player.position.x - player.radius + player.velocity.x
+      <= 
+      boundary.position.x + boundary.width
+    ) {
       console.log('we are colliding')
+      
     }
+
   })
 
 
