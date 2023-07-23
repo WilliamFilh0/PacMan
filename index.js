@@ -52,11 +52,11 @@ let lastKey = ''
 //array representing the game map
 //'-' represents a limit
 const map = [
-  ['-', '-', '-', '-', '-', '-'],
-  ['-', ' ', ' ', ' ', ' ', '-'],
-  ['-', ' ', '-', '-', ' ', '-'],
-  ['-', ' ', ' ', ' ', ' ', '-'],
-  ['-', '-', '-', '-', '-', '-']
+  ['-', '-', '-', '-', '-', '-','-'],
+  ['-', ' ', ' ', ' ', ' ', ' ','-'],
+  ['-', ' ', '-', ' ', '-', ' ','-'],
+  ['-', ' ', ' ', ' ', ' ', ' ','-'],
+  ['-', '-', '-', '-', '-', '-','-'],
 ]
 //An empty array called boundaries is created to store instances of the Boundary class.
 const boundaries = []
@@ -117,7 +117,8 @@ function animate() {
     boundary.draw()
 
     //função quando ele colide
-    if (player.position.y - player.radius + player.velocity.y
+    if (
+      player.position.y - player.radius + player.velocity.y
       <=
       boundary.position.y + boundary.height &&
       player.position.x + player.radius + player.velocity.x
