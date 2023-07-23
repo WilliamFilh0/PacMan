@@ -109,10 +109,29 @@ map.forEach((row, i) => {
   })
 })
 
+function circleCollidesWithRectangle({circle, rectangle
+}){
+  return (
+    
+  ) 
+    
+}
+
 ////serves to traverse the array boundaries and call the draw method for each boundary object within the array.
 function animate() {
   requestAnimationFrame(animate)
   c.clearRect(0, 0, canvas.width, canvas.height)
+
+  if (keys.w.pressed && lastKey === 'w') {
+    player.velocity.y = -5;
+  } else if (keys.a.pressed && lastKey === 'a') {
+    player.velocity.x = -5;
+  } else if (keys.s.pressed && lastKey === 's') {
+    player.velocity.y = 5; // Define a velocidade vertical para baixo.
+  } else if (keys.d.pressed && lastKey === 'd') {
+    player.velocity.x = 5; // Define a velocidade horizontal para a direita.
+  }
+
   boundaries.forEach(boundary => {
     boundary.draw()
 
@@ -141,15 +160,7 @@ function animate() {
   /*  player.velocity.x = 0
    player.velocity.y = 0 */
 
-  if (keys.w.pressed && lastKey === 'w') {
-    player.velocity.y = -5;
-  } else if (keys.a.pressed && lastKey === 'a') {
-    player.velocity.x = -5;
-  } else if (keys.s.pressed && lastKey === 's') {
-    player.velocity.y = 5; // Define a velocidade vertical para baixo.
-  } else if (keys.d.pressed && lastKey === 'd') {
-    player.velocity.x = 5; // Define a velocidade horizontal para a direita.
-  }
+ 
 
 
 }
