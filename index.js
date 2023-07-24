@@ -154,7 +154,10 @@ function animate() {
 
     //função quando ele colide
     if (
-     
+      circleCollidesWithRectangle({
+        circle: player,
+        rectangle: boundary
+      })
     ) {
       console.log('we are colliding')
       player.velocity.x = 0
