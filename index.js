@@ -109,6 +109,7 @@ map.forEach((row, i) => {
   })
 })
 
+//funçâo de colisão reaproveitada
 function circleCollidesWithRectangle({ circle, rectangle
 }) {
   return (
