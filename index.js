@@ -132,12 +132,16 @@ function animate() {
   c.clearRect(0, 0, canvas.width, canvas.height)
 
   if (keys.w.pressed && lastKey === 'w') {
+
     player.velocity.y = -5;
     boundaries.forEach(boundary => {
-      if (circleCollidesWithRectangle({
-        circle: player,
-        rectangle: boundary
-      })) {
+      if (
+        circleCollidesWithRectangle({
+          circle: player,
+          rectangle: boundary
+        })) {
+        player.velocity.y = 0
+      } else {
         player.velocity.y = -5
       }
     });
@@ -169,7 +173,7 @@ function animate() {
 
 
   player.update()
-  
+
 }
 
 animate()
