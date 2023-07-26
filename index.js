@@ -153,12 +153,30 @@ function animate() {
       }
     }
   
-    
-
   } else if (keys.a.pressed && lastKey === 'a') {
     player.velocity.x = -5;
   } else if (keys.s.pressed && lastKey === 's') {
     player.velocity.y = 5; // Define a velocidade vertical para baixo.
+    for(let i = 0; i<boundaries.length; i++){
+      const boundary = boundaries[i];
+      if (
+        circleCollidesWithRectangle({
+          circle: {
+            ...player,
+             velocity: {
+              x: 0,
+              y: 5
+            }
+          },
+          rectangle: boundary
+         })
+        ) {
+        player.velocity.y = 0
+        break
+      } else {
+        player.velocity.y = 5
+      }
+    }
   } else if (keys.d.pressed && lastKey === 'd') {
     player.velocity.x = 5; // Define a velocidade horizontal para a direita.
   }
