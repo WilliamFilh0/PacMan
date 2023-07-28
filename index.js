@@ -13,13 +13,19 @@ class Boundary {
     this.position = position
     this.width = 40
     this.height = 40
+    this.image = image
   }
 
   //draw a filled rectangle on the canvas
   draw() {
-    c.fillStyle = 'blue'
-    c.fillRect(this.position.x, this.position.y, this.width, this.height)
+   /* 
+  c.fillStyle = 'blue'
+  c.fillRect(this.position.x, this.position.y, this.width, this.height)
+  */
+
+ 
   }
+
 }
 
 //the player object in the game
@@ -103,7 +109,8 @@ map.forEach((row, i) => {
             position: {
               x: Boundary.width * j,
               y: Boundary.height * i
-            }
+            },
+         
           })
         )
         break
