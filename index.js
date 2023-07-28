@@ -110,7 +110,7 @@ map.forEach((row, i) => {
               x: Boundary.width * j,
               y: Boundary.height * i
             },
-            
+            image: image 
           })
         )
         break
