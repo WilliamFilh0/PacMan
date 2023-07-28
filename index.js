@@ -23,7 +23,7 @@ class Boundary {
   c.fillRect(this.position.x, this.position.y, this.width, this.height)
   */
 
- 
+  c.drawImage(this.image, this.position.x, this.position.y )
   }
 
 }
@@ -110,7 +110,7 @@ map.forEach((row, i) => {
               x: Boundary.width * j,
               y: Boundary.height * i
             },
-         
+            
           })
         )
         break
