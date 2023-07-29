@@ -67,7 +67,11 @@ const map = [
   ['-', '-', '-', '-', '-', '-', '-'],
 ]
 
-
+function createImage(src) {
+  const image = new Image();
+  image.src = src
+  return image
+}
 
 //An empty array called boundaries is created to store instances of the Boundary class.
 const boundaries = []
@@ -117,7 +121,7 @@ map.forEach((row, i) => {
         )
         break
 
-     
+      
     }
   })
 })
