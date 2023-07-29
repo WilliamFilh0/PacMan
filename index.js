@@ -9,7 +9,7 @@ canvas.height = innerWidth
 class Boundary {
   static width = 40
   static height = 40
-  constructor({ position }) {
+  constructor({ position, image }) {
     this.position = position
     this.width = 40
     this.height = 40
@@ -18,12 +18,12 @@ class Boundary {
 
   //draw a filled rectangle on the canvas
   draw() {
-   /* 
-  c.fillStyle = 'blue'
-  c.fillRect(this.position.x, this.position.y, this.width, this.height)
-  */
+    /* 
+   c.fillStyle = 'blue'
+   c.fillRect(this.position.x, this.position.y, this.width, this.height)
+   */
 
-  c.drawImage(this.image, this.position.x, this.position.y )
+  c.drawImage(this.image, this.position.x, this.position.y)
   }
 
 }
@@ -59,13 +59,16 @@ let lastKey = ''
 //'-' represents a limit
 const map = [
   ['-', '-', '-', '-', '-', '-', '-'],
-  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-  ['-', ' ', '-', ' ', '-', ' ', '-'],
-  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-  ['-', ' ', '-', ' ', '-', ' ', '-'],
-  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
+  ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+  ['|', ' ', '-', ' ', '-', ' ', '|'],
+  ['|', ' ', ' ', ' ', ' ', ' ', '|'],
+  ['|', ' ', '-', ' ', '-', ' ', '|'],
+  ['|', ' ', ' ', ' ', ' ', ' ', '|'],
   ['-', '-', '-', '-', '-', '-', '-'],
 ]
+
+
+
 //An empty array called boundaries is created to store instances of the Boundary class.
 const boundaries = []
 
@@ -110,10 +113,11 @@ map.forEach((row, i) => {
               x: Boundary.width * j,
               y: Boundary.height * i
             },
-            image: image 
           })
         )
         break
+
+     
     }
   })
 })
@@ -141,42 +145,42 @@ function animate() {
   c.clearRect(0, 0, canvas.width, canvas.height)
 
   if (keys.w.pressed && lastKey === 'w') {
-    for(let i = 0; i<boundaries.length; i++){
+    for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (
         circleCollidesWithRectangle({
           circle: {
             ...player,
-             velocity: {
+            velocity: {
               x: 0,
               y: -5
             }
           },
           rectangle: boundary
-         })
-        ) {
+        })
+      ) {
         player.velocity.y = 0
         break
       } else {
         player.velocity.y = -5
       }
     }
-  
+
   } else if (keys.a.pressed && lastKey === 'a') {
-    for(let i = 0; i<boundaries.length; i++){
+    for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (
         circleCollidesWithRectangle({
           circle: {
             ...player,
-             velocity: {
+            velocity: {
               x: -5,
               y: 0
             }
           },
           rectangle: boundary
-         })
-        ) {
+        })
+      ) {
         player.velocity.x = 0
         break
       } else {
@@ -185,22 +189,22 @@ function animate() {
     }
 
   } else if (keys.s.pressed && lastKey === 's') {
-   
+
   } else if (keys.d.pressed && lastKey === 'd') {
-    for(let i = 0; i<boundaries.length; i++){
+    for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (
         circleCollidesWithRectangle({
           circle: {
             ...player,
-             velocity: {
+            velocity: {
               x: 5,
               y: 0
             }
           },
           rectangle: boundary
-         })
-        ) {
+        })
+      ) {
         player.velocity.x = 0
         break
       } else {
