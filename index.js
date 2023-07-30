@@ -23,7 +23,7 @@ class Boundary {
    c.fillRect(this.position.x, this.position.y, this.width, this.height)
    */
 
-  c.drawImage(this.image, this.position.x, this.position.y)
+    c.drawImage(this.image, this.position.x, this.position.y)
   }
 
 }
@@ -58,13 +58,13 @@ let lastKey = ''
 //array representing the game map
 //'-' represents a limit
 const map = [
-  ['-', '-', '-', '-', '-', '-', '-'],
+  ['1', '-', '-', '-', '-', '-', '2'],
   ['|', ' ', ' ', ' ', ' ', ' ', '|'],
-  ['|', ' ', '-', ' ', '-', ' ', '|'],
+  ['|', ' ', 'b', ' ', 'b', ' ', '|'],
   ['|', ' ', ' ', ' ', ' ', ' ', '|'],
-  ['|', ' ', '-', ' ', '-', ' ', '|'],
+  ['|', ' ', 'b', ' ', 'b', ' ', '|'],
   ['|', ' ', ' ', ' ', ' ', ' ', '|'],
-  ['-', '-', '-', '-', '-', '-', '-'],
+  ['4', '-', '-', '-', '-', '-', '3'],
 ]
 
 function createImage(src) {
@@ -122,7 +122,7 @@ map.forEach((row, i) => {
         )
         break
 
-      
+     
     }
   })
 })
@@ -194,6 +194,26 @@ function animate() {
     }
 
   } else if (keys.s.pressed && lastKey === 's') {
+    for (let i = 0; i < boundaries.length; i++) {
+      const boundary = boundaries[i];
+      if (
+        circleCollidesWithRectangle({
+          circle: {
+            ...player,
+            velocity: {
+              x: 0,
+              y: 5
+            }
+          },
+          rectangle: boundary
+        })
+      ) {
+        player.velocity.y = 0
+        break
+      } else {
+        player.velocity.y = 5
+      }
+    }
 
   } else if (keys.d.pressed && lastKey === 'd') {
     for (let i = 0; i < boundaries.length; i++) {
@@ -289,4 +309,4 @@ window.addEventListener('keyup', ({ key }) => {
 })
 
 
-//1:17:00
+//1:27:00
