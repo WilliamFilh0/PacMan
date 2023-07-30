@@ -122,6 +122,18 @@ map.forEach((row, i) => {
         )
         break
 
+      case '|':
+        boundaries.push(
+          new Boundary({
+            position: {
+              x: Boundary.width * j,
+              y: Boundary.height * i
+            },
+            image: createImage('./img/pipeVertical.png')
+          })
+        )
+        break
+
      
     }
   })
